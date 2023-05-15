@@ -1,0 +1,111 @@
+// import logo from "./logo.svg";
+// import "./App.css";
+// import React, { useState, useEffect } from "react";
+
+// import DraggableItem from "./components/DraggableItem";
+// function App() {
+//   const items = [
+//     {
+//       id: 1,
+//       name: "item1",
+//       xPos: Math.random() * 100,
+//       yPos: Math.random() * 500,
+//     },
+//     {
+//       id: 2,
+//       name: "item2",
+//       xPos: Math.random() * 100,
+//       yPos: Math.random() * 100,
+//     },
+//   ];
+
+//   const [item, setItem] = useState("");
+//   const [submitted, setSubmitted] = useState(false);
+//   const [list, setList] = useState(items); // List of items
+//   // Track if form is submitted
+
+//   const changeHandler = (e) => {
+    
+//     e.preventDefault(); // Prevent form submission and page refresh
+//     if (!submitted) {
+//       // Only update the state if form is not submitted
+//       setItem(e.target.value);
+//     }
+//   };
+
+//   const submitHandler = (e) => {
+//     e.preventDefault(); // Prevent form submission and page refresh
+//     setSubmitted(true); // Mark form as submitted
+
+//     // Create a new item
+//     const newItem = {
+//       id: list.length + 1,
+//       name: item,
+//       xPos: Math.random() * 100,
+//       yPos: Math.random() * 100,
+//     };
+
+//     // Add the item to the list
+//     setList([...list, newItem]);
+
+//     // Reset the input field
+//     setItem("");
+//   };
+
+//   const style = {
+//     width: "auto",
+//     height: "50px",
+//     fontSize: "20px",
+//     padding: "10px",
+//     borderRadius: "5px",
+//     border: "1px solid #ccc",
+//     margin: "10px",
+//     backgroundColor: "#fff",
+//     borderColor: "#fff",
+//   };
+
+//   return (
+//     <>
+//       <div className="App">
+//         {list.map((item) => {
+//           console.log(item);
+//           return (
+//             <React.Fragment key={item.id}>
+//               <DraggableItem
+//                 item={item.name}
+//                 xPos={item.xPos}
+//                 yPos={item.yPos}
+//               />
+//             </React.Fragment>
+//           );
+//         })}
+//         <form
+//           onSubmit={submitHandler}
+//           style={{
+//             display: "flex",
+//             justifyContent: "center",
+//             alignItems: "center",
+//           }}
+//         >
+//           {" "}
+//           {/* Wrap the input and button in a form */}
+//           <input
+//             type="text"
+//             style={style}
+//             value={item}
+//             onChange={changeHandler}
+//           />
+//           <button style={style} type="submit">
+//             {" "}
+//             {/* Add type="submit" to the button */}✅
+//           </button>
+//         </form>
+//         
+
+//        
+//       </div>
+//     </>
+//   );
+// }
+
+// export default App;

@@ -1,0 +1,72 @@
+@keyframes pulsate {
+  0% {
+    box-shadow: 0px 0px 0px 0px #8f43ee00;
+  }
+  50% {
+    box-shadow: 0px 0px 100px 10px #8f43ee;
+  }
+  100% {
+    box-shadow: 0px 0px 0px 0px #8f43ee00;
+  }
+}
+
+h4 {
+  font-family: "Maven Pro", sans-serif !important;
+}
+
+h4 button {
+  background-color: #00000044;
+  color: white;
+  border: 1px solid #4e4e4e;
+  backdrop-filter: blur(10px);
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  height: 25px;
+  width: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  font-size: 10px;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+  top: -25px;
+  right: -25px;
+}
+
+h4 button:hover {
+  background-color: #fdfdfd2f;
+  color: rgb(255, 255, 255);
+  transform: scale(1.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: center;
+  transition: all 0.1s ease-in-out;
+  text-align: center;
+}
+
+.toast {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 87, 87, 0.144);
+  color: rgb(255, 255, 255);
+  backdrop-filter: blur(5px);
+  height: 20px;
+  padding: 20px;
+  width: 300px;
+  z-index: 111111111111111111111111111;
+  top: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 0px #000000;
+  transition: top 1s ease-in-out;
+  font-family: "Maven Pro", sans-serif;
+}
