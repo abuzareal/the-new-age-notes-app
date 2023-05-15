@@ -22,10 +22,29 @@
   }
 }
 
+h1 {
+  font-size: 34px;
+  color: #ffffff;
+
+  margin-bottom: 0px;
+
+  position: fixed;
+  font-weight: 100;
+  font-family: "Maven Pro", sans-serif;
+  text-decoration: solid underline #8f43ee;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+  text-decoration-color: #8f43ee;
+  text-underline-position: under;
+  z-index: 111111;
+  top: 37%;
+  opacity: 8;
+}
+
 form {
   position: fixed;
   z-index: 44444444444444;
-  border: 1px solid #ffffff1c;
+  border: 1px solid #282c34;
   background-color: #3333334f;
   backdrop-filter: blur(10px);
   border-radius: 10px;
@@ -35,30 +54,28 @@ form {
   justify-content: space-between;
   padding: 10px;
   width: 400px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   box-shadow: 0px 0px 40px 10px #000000a1;
 }
 
-form > input {
+form > textarea {
   background-color: #111111 !important;
   color: rgba(255, 255, 255, 0.836);
   border: 1px solid #282c34;
   border-radius: 5px;
-  height: 50px;
+  height: auto;
   font-size: 18px;
   width: 320px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   padding: 14px;
+  outline: none;
+  transform-origin: top;
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-input:focus {
+textarea:focus {
   border: #8f43ee 1px solid;
   box-shadow: #a85fff55 0px 0px 10px 0px;
-}
-
-input {
-  outline: none;
 }
 
 form button {

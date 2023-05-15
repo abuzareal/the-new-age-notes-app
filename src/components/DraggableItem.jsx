@@ -14,19 +14,19 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
     position: "absolute",
     alignItems: "center",
     padding: "12px",
-    textAlign: "center",
+    textAlign: "left",
     borderRadius: "10px",
     boxShadow: isDragged
-      ? "0px 0px 100px 0px #8F43EE, 0px 0px 0px 0px #8F43EE"
+      ? "0px 0px 100px 0px #8F43EE, 0px 0px 0px 0px #8F43EE "
       : "0px 0px 0px 0px #8F43EE",
     cursor: "move",
     transition: "all 0.4s cubic-bezier(0,.99,.28,1.01)",
-   
+
     zIndex: "100000000",
     fontWeight: "400",
-    letterSpacing: "1px",
     fontSize: "1rem",
-    animation: isDragged ? "pulsate 1s ease-in-out infinite" : "none",
+    fontFamily: "Maven Pro , sans-serif !important;",
+    animation: isDragged ? "pulsate 1.3s ease-in-out infinite" : "none",
   };
 
   return (
@@ -44,7 +44,7 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
       }}
     >
       <h4 style={style}>
-        {item}
+        <pre>{item}</pre>
         <button
           onClick={() => {
             deleteNote(id);

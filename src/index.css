@@ -2,18 +2,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Maven Pro", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  font-family: Fira Code;
+
   background: linear-gradient(
       -90deg,
       rgba(255, 255, 255, 0.04) 1px,
       transparent 1px
     ),
-    linear-gradient(rgba(255, 255, 255, 0.04)1px, transparent 1px),
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(-90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
     linear-gradient(
@@ -22,7 +23,7 @@ body {
       #000000 78px,
       transparent 78px
     ),
-    linear-gradient(-90deg, rgba(73, 73, 73,0.5) 1px, transparent 1px),
+    linear-gradient(-90deg, rgba(73, 73, 73, 0.5) 1px, transparent 1px),
     linear-gradient(
       -90deg,
       transparent 3px,
@@ -30,14 +31,14 @@ body {
       #000000 78px,
       transparent 78px
     ),
-    linear-gradient(rgb(73, 73, 73,0.5) 1px, transparent 1px), #000;
+    linear-gradient(rgb(73, 73, 73, 0.5) 1px, transparent 1px), #000;
   background-size: 4px 4px, 4px 4px, 80px 80px, 80px 80px, 80px 80px, 80px 80px,
     80px 80px, 80px 80px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* ::selection {
+  background-color: #8f43ee;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {

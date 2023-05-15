@@ -3,12 +3,13 @@ import React, { useState } from "react";
 
 import DraggableItem from "./components/DraggableItem";
 import { MdRocketLaunch } from "react-icons/md";
-import Draggable from "react-draggable";
+import { BsClipboardPlus } from "react-icons/bs";
+
 function App() {
   const items = [
     {
       id: 1,
-      name: " Get the Eggs 🥚",
+      name: " Make your Note",
       xPos: Math.random() * 250,
       yPos: Math.random() * 250,
     },
@@ -35,6 +36,7 @@ function App() {
     // Check if the value is valid
 
     setItem(value);
+    setIsValid(true);
   };
 
   const submitHandler = (e) => {
@@ -69,8 +71,10 @@ function App() {
   };
 
   return (
-    <Draggable>
+    <>
       <div className="App">
+        <h1>Starboard</h1>
+
         {list.map((item) => {
           return (
             <React.Fragment key={item.id}>
@@ -87,11 +91,11 @@ function App() {
         <form onSubmit={submitHandler}>
           {" "}
           {/* Wrap the input and button in a form */}
-          <input
+          <textarea
             type="text"
             value={item}
             onChange={changeHandler}
-            placeholder="Make your note...📝"
+            placeholder=" 📝 Make your star note..."
             // onBlur={() =>
             //   item.length > 0 ? setIsValid(true) : setIsValid(false)
             // }
@@ -113,7 +117,7 @@ function App() {
           </div>
         )}
       </div>
-    </Draggable>
+    </>
   );
 }
 
