@@ -1,9 +1,9 @@
-
 import "./App.css";
 import React, { useState } from "react";
 
 import DraggableItem from "./components/DraggableItem";
 import { MdRocketLaunch } from "react-icons/md";
+import Draggable from "react-draggable";
 function App() {
   const items = [
     {
@@ -69,7 +69,7 @@ function App() {
   };
 
   return (
-    <>
+    <Draggable>
       <div className="App">
         {list.map((item) => {
           return (
@@ -113,7 +113,7 @@ function App() {
           </div>
         )}
       </div>
-    </>
+    </Draggable>
   );
 }
 
