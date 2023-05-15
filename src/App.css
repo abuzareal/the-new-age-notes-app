@@ -65,12 +65,15 @@ form > textarea {
   border-radius: 5px;
   height: auto;
   font-size: 18px;
-  width: 320px;
+  width: 320px; 
   font-family: "Maven Pro", sans-serif;
   padding: 14px;
   outline: none;
   transform-origin: top;
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+  resize: vertical;
+  overflow: auto;
+
 }
 
 textarea:focus {

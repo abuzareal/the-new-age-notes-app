@@ -73,7 +73,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Starboard</h1>
+        <h1>Starboard 👾</h1>
 
         {list.map((item) => {
           return (
