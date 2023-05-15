@@ -38,7 +38,7 @@ h1 {
   text-underline-position: under;
   z-index: 111111;
   top: 37%;
-  opacity: 8;
+  opacity: 0.5;
 }
 
 form {
@@ -65,7 +65,7 @@ form > textarea {
   border-radius: 5px;
   height: auto;
   font-size: 18px;
-  width: 320px; 
+  width: 320px;
   font-family: "Maven Pro", sans-serif;
   padding: 14px;
   outline: none;
@@ -73,7 +73,6 @@ form > textarea {
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
   resize: vertical;
   overflow: auto;
-
 }
 
 textarea:focus {
@@ -88,7 +87,6 @@ form button {
   border-radius: 5px;
   width: 50px;
   cursor: pointer;
-
   height: 50px;
   font-size: 24px;
 }
@@ -105,4 +103,28 @@ form button:focus {
 form button:hover {
   box-shadow: #a85fff 0px 0px 10px 0px;
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  max-width: 80%;
+  padding: 20px;
+  height: 50px;
+  border: 1px solid #282c34;
+  background-color: #3333334f;
+  display: flex;
+  backdrop-filter: blur(10px);
+  align-items: center;
+  justify-content: space-around;
+  color: #9c9c9cd5;
+  font-family: "Maven Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 100;
+  z-index: 111111;
+  opacity: 1;
+  bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 40px 10px #000000a1;
+  z-index: 111111111111111111111111111111111111111111;
 }
