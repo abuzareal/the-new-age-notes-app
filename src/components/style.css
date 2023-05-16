@@ -51,37 +51,3 @@ h4 button:hover {
   transition: all 0.1s ease-in-out;
   text-align: center;
 }
-
-.toast {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background-color: rgba(255, 70, 70, 0.75);
-  color: rgb(255, 255, 255);
-  backdrop-filter: blur(5px);
-  height: 20px;
-  padding: 20px;
-  width: 250px;
-  z-index: 111111111111111111111111111;
-  bottom: 30px;
-  right: 40px;
-  border-radius: 10px;
-  box-shadow: 0px 0px 10px 0px #000000;
-
-  transition: transform 1s ease-in-out;
-  font-family: "Maven Pro", sans-serif;
-
-  animation: slideLeft 100ms ease;
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateY(100px);
-  }
-
-  100% {
-    transform: translateY(0px);
-  }
-}
