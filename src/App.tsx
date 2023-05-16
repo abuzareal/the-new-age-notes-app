@@ -3,8 +3,7 @@ import React, { useState } from "react";
 
 import DraggableItem from "./components/DraggableItem";
 import { MdRocketLaunch } from "react-icons/md";
-import { BsClipboardPlus } from "react-icons/bs";
-import AlertToast from "./components/UI/AlertToast";
+import { DiReact } from "react-icons/di";
 
 function App() {
   const items = [
@@ -28,7 +27,7 @@ function App() {
   const [isValid, setIsValid] = useState(false); // Track if input is valid
   // Track if form is submitted
 
-  const changeHandler = (e) => {
+  const changeHandler = (e: any) => {
     e.preventDefault(); // Prevent form submission and page refresh
 
     // Get the value from the input
@@ -40,11 +39,12 @@ function App() {
     setIsValid(true);
   };
 
-  const submitHandler = (e) => {
+  const submitHandler = (e: any) => {
     e.preventDefault(); // Prevent form submission and page refresh
 
     // Mark form as submitted
     setSubmitted(true);
+    setIsValid(true);
 
     // Check if the item is not empty
     if (item.trim() !== "") {
@@ -67,7 +67,7 @@ function App() {
     }
   };
 
-  const deleteNote = (id) => {
+  const deleteNote = (id: any) => {
     setList(list.filter((item) => item.id !== id));
   };
 
@@ -93,13 +93,9 @@ function App() {
           {" "}
           {/* Wrap the input and button in a form */}
           <textarea
-            type="text"
             value={item}
             onChange={changeHandler}
             placeholder=" 📝 Make your star note..."
-            // onBlur={() =>
-            //   item.length > 0 ? setIsValid(true) : setIsValid(false)
-            // }
           />
           <button type="submit">
             <MdRocketLaunch
@@ -111,7 +107,27 @@ function App() {
           </button>
         </form>
 
-        {submitted && !isValid && <AlertToast />}
+        {submitted && !isValid && (
+          <div className="toast">
+            {" "}
+            <span>Please enter a note</span>{" "}
+          </div>
+        )}
+        <div className="footer">
+          <p>Made with </p>
+          <DiReact
+            color="
+            #61dafb"
+            size="1.5rem"
+            style={{
+              margin: "0.25rem",
+            }}
+          />
+          <p>
+            by Nischal and Abuzar
+            <br />
+          </p>
+        </div>
       </div>
     </>
   );

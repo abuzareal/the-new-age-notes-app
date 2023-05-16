@@ -16,6 +16,7 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
     padding: "12px",
     textAlign: "left",
     borderRadius: "10px",
+    resize: "both",
     boxShadow: isDragged
       ? "0px 0px 100px 0px #8F43EE, 0px 0px 0px 0px #8F43EE "
       : "0px 0px 0px 0px #8F43EE",
@@ -26,12 +27,12 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
     fontWeight: "400",
     fontSize: "1rem",
     fontFamily: "Maven Pro , sans-serif !important;",
-    animation: isDragged ? "pulsate 1.3s ease-in-out infinite" : "none",
+    animation: isDragged ? "pulsate 1.3s ease infinite" : "none",
   };
 
   return (
     <Draggable
-      defaultPosition={{ x: xPos - 50, y: yPos + 50 }}
+      defaultPosition={{ x: xPos - 50, y: yPos + 100 }}
       style={{
         position: "absolute",
         zIndex: "1000",
