@@ -1,17 +1,27 @@
 import "./App.css";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import AlertToast from "./components/UI/Alerts/AlertToast";
 import Footer from "./components/UI/Footer";
 import InputForm from "./components/InputForm";
 import NoteItems from "./components/NoteItems";
 import items from "./Models/MockItem";
+import error from "./assets/Audio/error.mp3";
 
-function App() {
+const App: React.FC = () => {
   const [item, setItem] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [list, setList] = useState(items); // List of items
+  const [list, setList] = useState(() => {
+    try {
+      const storedNotes = localStorage.getItem("notes");
+      return storedNotes ? JSON.parse(storedNotes) : items;
+    } catch (error) {
+      console.error("Error parsing local storage data:", error);
+      return items;
+    }
+  }); // List of items
   const [isValid, setIsValid] = useState(false); // Track if input is valid
+  const audioRef = useRef<HTMLAudioElement>(null);
   // Track if form is submitted
 
   const changeHandler = (e: any) => {
@@ -44,6 +54,7 @@ function App() {
       };
 
       // Add the item to the list
+
       setList([...list, newItem]);
       // Reset the input field
 
@@ -51,11 +62,16 @@ function App() {
       setIsValid(true);
     } else {
       setIsValid(false);
+      if (audioRef.current) audioRef.current.play();
     }
   };
 
+  useEffect(() => {
+    localStorage.setItem("notes", JSON.stringify(list));
+  }, [list]);
+
   const deleteNote = (id: any): void => {
-    setList(list.filter((item) => item.id !== id));
+    setList(list.filter((item: { id: any }) => item.id !== id));
   };
 
   return (
@@ -71,11 +87,18 @@ function App() {
           changeHandler={changeHandler}
         />
 
-        {submitted && !isValid && <AlertToast />}
+        {submitted && !isValid && (
+          <>
+            <AlertToast />
+            <audio ref={audioRef} style={{}}>
+              <source src={error} type="audio/mpeg" />
+            </audio>
+          </>
+        )}
         <Footer />
       </div>
     </>
   );
-}
+};
 
 export default App;
