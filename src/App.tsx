@@ -3,7 +3,6 @@ import React, { useState } from "react";
 
 import DraggableItem from "./components/DraggableItem";
 
-
 import AlertToast from "./components/UI/Alerts/AlertToast";
 import Footer from "./components/UI/Footer";
 import InputForm from "./components/InputForm";
@@ -11,8 +10,6 @@ import NoteItems from "./components/NoteItems";
 import items from "./Models/MockItem";
 
 function App() {
-  
-
   const [item, setItem] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [list, setList] = useState(items); // List of items
@@ -69,8 +66,12 @@ function App() {
         <h1>Starboard 👾</h1>
 
         <NoteItems list={list} deleteNote={deleteNote} />
-        
-        <InputForm submitHandler={submitHandler} item={item} changeHandler={changeHandler} />
+
+        <InputForm
+          submitHandler={submitHandler}
+          item={item}
+          changeHandler={changeHandler}
+        />
 
         {submitted && !isValid && <AlertToast />}
         <Footer />
