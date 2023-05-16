@@ -27,7 +27,7 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
     fontWeight: "400",
     fontSize: "1rem",
     fontFamily: "Maven Pro , sans-serif !important;",
-    animation: isDragged ? "pulsate 1.3s ease-in-out infinite" : "none",
+    animation: isDragged ? "pulsate 1.3s ease infinite" : "none",
   };
 
   return (
