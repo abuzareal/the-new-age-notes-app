@@ -1,7 +1,5 @@
 import "./App.css";
-import React, { useState } from "react";
-
-import DraggableItem from "./components/DraggableItem";
+import { useState } from "react";
 
 import AlertToast from "./components/UI/Alerts/AlertToast";
 import Footer from "./components/UI/Footer";

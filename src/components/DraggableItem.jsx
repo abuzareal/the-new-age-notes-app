@@ -42,6 +42,7 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
       }}
       onStop={() => {
         setIsDragged(false);
+        
       }}
     >
       <h4 style={style}>
