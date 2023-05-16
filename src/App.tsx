@@ -2,24 +2,16 @@ import "./App.css";
 import React, { useState } from "react";
 
 import DraggableItem from "./components/DraggableItem";
-import { MdRocketLaunch } from "react-icons/md";
-import { DiReact } from "react-icons/di";
+
+
+import AlertToast from "./components/UI/Alerts/AlertToast";
+import Footer from "./components/UI/Footer";
+import InputForm from "./components/InputForm";
+import NoteItems from "./components/NoteItems";
+import items from "./Models/MockItem";
 
 function App() {
-  const items = [
-    {
-      id: 1,
-      name: " Make your Note",
-      xPos: Math.random() * 250,
-      yPos: Math.random() * 250,
-    },
-    {
-      id: 2,
-      name: " Get the Milk 🥛",
-      xPos: Math.random() * 250,
-      yPos: Math.random() * 250,
-    },
-  ];
+  
 
   const [item, setItem] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -67,7 +59,7 @@ function App() {
     }
   };
 
-  const deleteNote = (id: any) => {
+  const deleteNote = (id: any): void => {
     setList(list.filter((item) => item.id !== id));
   };
 
@@ -76,58 +68,12 @@ function App() {
       <div className="App">
         <h1>Starboard 👾</h1>
 
-        {list.map((item) => {
-          return (
-            <React.Fragment key={item.id}>
-              <DraggableItem
-                item={item.name}
-                xPos={item.xPos}
-                yPos={item.yPos}
-                id={item.id}
-                deleteNote={deleteNote}
-              />
-            </React.Fragment>
-          );
-        })}
-        <form onSubmit={submitHandler}>
-          {" "}
-          {/* Wrap the input and button in a form */}
-          <textarea
-            value={item}
-            onChange={changeHandler}
-            placeholder=" 📝 Make your star note..."
-          />
-          <button type="submit">
-            <MdRocketLaunch
-              style={{
-                color: "white",
-                fontSize: "1.75rem",
-              }}
-            />
-          </button>
-        </form>
+        <NoteItems list={list} deleteNote={deleteNote} />
+        
+        <InputForm submitHandler={submitHandler} item={item} changeHandler={changeHandler} />
 
-        {submitted && !isValid && (
-          <div className="toast">
-            {" "}
-            <span>Please enter a note</span>{" "}
-          </div>
-        )}
-        <div className="footer">
-          <p>Made with </p>
-          <DiReact
-            color="
-            #61dafb"
-            size="1.5rem"
-            style={{
-              margin: "0.25rem",
-            }}
-          />
-          <p>
-            by Nischal and Abuzar
-            <br />
-          </p>
-        </div>
+        {submitted && !isValid && <AlertToast />}
+        <Footer />
       </div>
     </>
   );
