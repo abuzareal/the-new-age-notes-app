@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useRef } from "react";
 import Draggable from "react-draggable";
 import "./style.css";
+import noty from "../assets/Audio/noty.mp3";
+import reverse from "../assets/Audio/reverse.mp3";
 
 const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
   const [isDragged, setIsDragged] = React.useState(false);
+  const audioRef = useRef(null);
+  const audioRef2 = useRef(null);
 
   const style = {
     backgroundColor: "#8F43EE",
@@ -32,28 +36,41 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
 
   return (
     <Draggable
-      defaultPosition={{ x: xPos - 50, y: yPos + 100 }}
+      defaultPosition={{
+        x: xPos,
+        y: yPos,
+      }}
       style={{
         position: "absolute",
         zIndex: "1000",
       }}
       onStart={() => {
         setIsDragged(true);
+        audioRef2.current.play();
       }}
       onStop={() => {
         setIsDragged(false);
+        audioRef2.current.play();
       }}
     >
-      <h4 style={style}>
-        <pre>{item}</pre>
-        <button
-          onClick={() => {
-            deleteNote(id);
-          }}
-        >
-          X
-        </button>
-      </h4>
+      <div>
+        <h4 style={style}>
+          <pre>{item}</pre>
+          <button
+            onClick={() => {
+              deleteNote(id);
+            }}
+          >
+            X
+          </button>
+        </h4>
+        {/* <audio ref={audioRef} style={{}}>
+          <source src={noty} type="audio/mpeg" />
+        </audio> */}
+        <audio ref={audioRef2} style={{}}>
+          <source src={reverse} type="audio/mpeg" />
+        </audio>
+      </div>
     </Draggable>
   );
 };
