@@ -1,12 +1,11 @@
 import React, { useRef } from "react";
 import Draggable from "react-draggable";
 import "./style.css";
-import noty from "../assets/Audio/noty.mp3";
+
 import reverse from "../assets/Audio/reverse.mp3";
 
 const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
   const [isDragged, setIsDragged] = React.useState(false);
-  const audioRef = useRef(null);
   const audioRef2 = useRef(null);
 
   const style = {
