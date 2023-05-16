@@ -85,6 +85,7 @@ function App() {
                 yPos={item.yPos}
                 id={item.id}
                 deleteNote={deleteNote}
+                
               />
             </React.Fragment>
           );
