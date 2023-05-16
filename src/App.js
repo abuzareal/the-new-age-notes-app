@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import DraggableItem from "./components/DraggableItem";
 import { MdRocketLaunch } from "react-icons/md";
 import { BsClipboardPlus } from "react-icons/bs";
+import AlertToast from "./components/UI/AlertToast";
 
 function App() {
   const items = [
@@ -110,15 +111,11 @@ function App() {
           </button>
         </form>
 
-        {submitted && !isValid && (
-          <div className="toast">
-            {" "}
-            <span>Please enter a note</span>{" "}
-          </div>
-        )}
+        {submitted && !isValid && <AlertToast />}
       </div>
     </>
   );
 }
 
 export default App;
+``
