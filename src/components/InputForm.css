@@ -15,7 +15,7 @@ form {
   box-shadow: 0px 0px 40px 10px #000000a1;
 }
 
-form > textarea {
+form > input {
   background-color: #111111 !important;
   color: rgba(255, 255, 255, 0.836);
   border: 1px solid #282c34;
@@ -28,13 +28,16 @@ form > textarea {
   outline: none;
   transform-origin: top;
   transition: all 0.3s cubic-bezier(0.39, 0.575, 0.565, 1);
-  resize: vertical;
-  overflow: auto;
+ 
 }
 
-textarea:focus {
+input:focus {
   border: #8f43ee 1px solid;
   box-shadow: #a85fff55 0px 0px 10px 0px;
+}
+
+form input::placeholder {
+  color: #ffffff49 !important;
 }
 
 form button {
