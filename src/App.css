@@ -34,7 +34,7 @@ h1 {
   text-underline-offset: 8px;
   text-decoration-color: #8f43ee;
   text-underline-position: under;
-  z-index: 111111;
+  z-index: -111111;
   top: 37%;
   opacity: 0.5;
 }
@@ -45,8 +45,8 @@ h1 {
   position: fixed;
   bottom: 0;
   max-width: 80%;
-  padding: 20px;
-  height: 50px;
+  padding: 10px;
+  
   border: 1px solid #282c34;
   background-color: #3333334f;
   display: flex;
@@ -55,12 +55,12 @@ h1 {
   justify-content: space-around;
   color: #9c9c9cd5;
   font-family: "Maven Pro", sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 100;
   z-index: 111111;
   opacity: 1;
   bottom: 20px;
   border-radius: 10px;
   box-shadow: 0px 0px 40px 10px #000000a1;
-  z-index: 111111111111111111111111111111111111111111;
+  z-index: 111111111111111111111111;
 }

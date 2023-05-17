@@ -7,7 +7,7 @@ function InputForm({ submitHandler, item, changeHandler }) {
     <form onSubmit={submitHandler}>
       {" "}
       {/* Wrap the input and button in a form */}
-      <textarea
+      <input
         value={item}
         onChange={changeHandler}
         placeholder=" 📝 Make your star note..."
