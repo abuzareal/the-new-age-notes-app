@@ -14,12 +14,21 @@ const App: React.FC = () => {
   const [list, setList] = useState(() => {
     try {
       const storedNotes = localStorage.getItem("notes");
-      return storedNotes ? JSON.parse(storedNotes) : items;
+      console.log(storedNotes);
+      let parsedNotes = storedNotes ? JSON.parse(storedNotes) : items;
+
+      parsedNotes = parsedNotes.map((note: any) => ({
+        ...note,
+        xPos: Math.random() * (window.innerWidth / 3), // Modify this line based on your requirements
+        yPos: Math.random() * (window.innerHeight / 3), // Modify this line based on your requirements
+      }));
+      console.log(parsedNotes);
+      return parsedNotes;
     } catch (error) {
       console.error("Error parsing local storage data:", error);
       return items;
     }
-  }); // List of items
+  });
   const [isValid, setIsValid] = useState(false); // Track if input is valid
   const audioRef = useRef<HTMLAudioElement>(null);
   // Track if form is submitted
@@ -49,8 +58,8 @@ const App: React.FC = () => {
       const newItem = {
         id: list.length + 1,
         name: item,
-        xPos: Math.random() * 250,
-        yPos: Math.random() * 250,
+        xPos: Math.random() * window.innerWidth, // Modify this line based on your requirements
+        yPos: Math.random() * window.innerHeight, // Modify this line based on your requirements
       };
 
       // Add the item to the list
@@ -90,7 +99,7 @@ const App: React.FC = () => {
         {submitted && !isValid && (
           <>
             <AlertToast />
-            <audio ref={audioRef} style={{}}>
+            <audio ref={audioRef}>
               <source src={error} type="audio/mpeg" />
             </audio>
           </>

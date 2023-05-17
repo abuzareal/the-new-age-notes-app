@@ -19,7 +19,9 @@ const DraggableItem = ({ item, xPos, yPos, deleteNote, id }) => {
     padding: "12px",
     textAlign: "left",
     borderRadius: "10px",
-    resize: "both",
+    top: "0",
+    left: "0",
+    translate: "transform(-50%,-50%)",
     boxShadow: isDragged
       ? "0px 0px 100px 0px #8F43EE, 0px 0px 0px 0px #8F43EE "
       : "0px 0px 0px 0px #8F43EE",
